@@ -158,46 +158,46 @@
   - Static Fields
     To use a class method, a class had to be instantiated first, as shown below.
 
-  ```javascript
-  class Smartphone {
-    add_color() {
-      console.log('Adding Colors');
+    ```javascript
+    class Smartphone {
+      add_color() {
+        console.log('Adding Colors');
+      }
     }
-  }
-  const apple = new Smartphone();
-  apple.add_color(); // output is: Adding Colors
+    const apple = new Smartphone();
+    apple.add_color(); // output is: Adding Colors
 
-  Smartphone.add_color(); // TypeError: Smartphone.add_color is not a function
-  ```
+    Smartphone.add_color(); // TypeError: Smartphone.add_color is not a function
+    ```
 
-  ```javascript
-  class Smartphone {
-    designer(color) {
-      this.color = color;
+    ```javascript
+    class Smartphone {
+      designer(color) {
+        this.color = color;
+      }
+      static create_smartphone(color) {
+        return new Smartphone(color);
+      }
     }
-    static create_smartphone(color) {
-      return new Smartphone(color);
-    }
-  }
-  const silver = Smartphone.create_smartphone('silver'); // output is: undefined
-  ```
+    const silver = Smartphone.create_smartphone('silver'); // output is: undefined
+    ```
 
   - Top Level Await
   - Promise.allSettled
 
-  ```javascript
-  promise_1 = Promise.resolve('hi');
-  promise_2 = new Promise((resolve, reject) =>
-    setTimeout(reject, 100, 'world')
-  );
+    ```javascript
+    promise_1 = Promise.resolve('hi');
+    promise_2 = new Promise((resolve, reject) =>
+      setTimeout(reject, 100, 'world')
+    );
 
-  Promise.allSettled([promise_1, promise_2]).then(
-    ([promise_1_result, promise_2_result]) => {
-      console.log(promise_1_result); // output is: {status: 'fulfilled', value: 'hi'}
-      console.log(promise_2_result); // output is: {status: 'rejected', reason: 'world'}
-    }
-  );
-  ```
+    Promise.allSettled([promise_1, promise_2]).then(
+      ([promise_1_result, promise_2_result]) => {
+        console.log(promise_1_result); // output is: {status: 'fulfilled', value: 'hi'}
+        console.log(promise_2_result); // output is: {status: 'rejected', reason: 'world'}
+      }
+    );
+    ```
 
   - Dynamic Import
 
