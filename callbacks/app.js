@@ -1,5 +1,3 @@
-'use strict';
-
 const fs = require('fs');
 
 /* 
@@ -17,18 +15,18 @@ The callback should console.log() the return value from isEven()
 const numberArray = [0, 1, 2, 3, 4, 5, 6];
 
 const isEven = (number, callback) => {
-	callback(number % 2 === 0 ? true : false);
+  callback(number % 2 === 0 ? true : false);
 };
 
 const printIsEven = (data) => {
-	console.log(`Number is even: ${data}`);
+  console.log(`Number is even: ${data}`);
 };
 
 const loopOverArray = (array) => {
-	for (let i = 0; i < array.length; i++) {
-		console.log(i);
-		isEven(i, printIsEven);
-	}
+  for (let i = 0; i < array.length; i++) {
+    console.log(i);
+    isEven(i, printIsEven);
+  }
 };
 
 loopOverArray(numberArray);
@@ -43,10 +41,10 @@ You can test this by calling your function with './words.txt', which is a file t
 */
 
 const contents = (fileName) => {
-	fs.readFile(fileName, (err, data) => {
-		if (err) throw console.error(err);
-		console.log('baracuda', data.toString());
-	});
+  fs.readFile(fileName, (err, data) => {
+    if (err) throw console.error(err);
+    console.log('baracuda', data.toString());
+  });
 };
 
 contents('./words.txt');

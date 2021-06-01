@@ -1,5 +1,3 @@
-'use strict';
-
 const superagent = require('superagent');
 
 /*
@@ -10,14 +8,14 @@ Invoke your async function
 */
 
 const getRandomNumber = new Promise((resolve) => {
-	setTimeout(() => {
-		resolve(Math.ceil(Math.random() * 5));
-	}, 500);
+  setTimeout(() => {
+    resolve(Math.ceil(Math.random() * 5));
+  }, 500);
 });
 
 const printRandomNumber = async () => {
-	const result = await getRandomNumber;
-	console.log(result);
+  const result = await getRandomNumber;
+  console.log(result);
 };
 
 printRandomNumber();
@@ -32,25 +30,25 @@ Invoke your async function with a few cities as a test
 */
 
 const getCityData = (cityName) => {
-	cityName = cityName.toLowerCase();
-	return superagent
-		.get(`https://geocode.xyz/${cityName}?json=1`)
-		.then((res) => {
-			let cityData = {
-				name: res.body.standard.city,
-				latitude: res.body.latt,
-				longitude: res.body.longt
-			};
-			return cityData;
-		})
-		.catch((err) => {
-			console.error("ERROR: It's quiet.. TOO quiet..");
-		});
+  cityName = cityName.toLowerCase();
+  return superagent
+    .get(`https://geocode.xyz/${cityName}?json=1`)
+    .then((res) => {
+      let cityData = {
+        name: res.body.standard.city,
+        latitude: res.body.latt,
+        longitude: res.body.longt,
+      };
+      return cityData;
+    })
+    .catch((err) => {
+      console.error("ERROR: It's quiet.. TOO quiet..");
+    });
 };
 
 const printLatAndLong = async (cityData) => {
-	const result = await getCityData(cityData);
-	console.log(result);
+  const result = await getCityData(cityData);
+  console.log(result);
 };
 
 printLatAndLong('PORTland');

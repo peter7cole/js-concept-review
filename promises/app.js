@@ -1,5 +1,3 @@
-'use strict';
-
 const superagent = require('superagent');
 
 /* 
@@ -16,28 +14,28 @@ The callback should console.log() the return value from isEven()
 const numberArray = [0, 1, 2, 3, 4, 5];
 
 const isEven = (number) => {
-	return new Promise((resolve, reject) => {
-		let pauseTime = Math.ceil(Math.random() * 1000);
-		setTimeout(() => {
-			if (number % 2 === 0) {
-				resolve(true);
-			} else {
-				reject(false);
-			}
-		}, pauseTime);
-	});
+  return new Promise((resolve, reject) => {
+    let pauseTime = Math.ceil(Math.random() * 1000);
+    setTimeout(() => {
+      if (number % 2 === 0) {
+        resolve(true);
+      } else {
+        reject(false);
+      }
+    }, pauseTime);
+  });
 };
 
 const printCallback = (i, res) => {
-	console.log(`${i} is even: ${res}`);
+  console.log(`${i} is even: ${res}`);
 };
 
 const loopOverArray = (array) => {
-	for (let i = 0; i < array.length; i++) {
-		isEven(i)
-			.then((res) => printCallback(i, res))
-			.catch((err) => printCallback(i, err));
-	}
+  for (let i = 0; i < array.length; i++) {
+    isEven(i)
+      .then((res) => printCallback(i, res))
+      .catch((err) => printCallback(i, err));
+  }
 };
 
 loopOverArray(numberArray);
@@ -52,21 +50,21 @@ Output this JSON object
 // Star Wars API is no longer maintained, so used the Poke API instead
 
 const getPokemon = (pokeName) => {
-	return superagent
-		.get(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
-		.then((res) => {
-			let pokemon = {};
-			pokemon[res.body.name] = res.body.sprites.front_default;
-			return pokemon;
-		})
-		.catch((err) => {
-			console.error("ERROR: It's quiet.. TOO quiet..");
-		});
+  return superagent
+    .get(`https://pokeapi.co/api/v2/pokemon/${pokeName}/`)
+    .then((res) => {
+      let pokemon = {};
+      pokemon[res.body.name] = res.body.sprites.front_default;
+      return pokemon;
+    })
+    .catch((err) => {
+      console.error("ERROR: It's quiet.. TOO quiet..");
+    });
 };
 
 const printPokemon = async (pokeName) => {
-	const result = await getPokemon(pokeName);
-	console.log(result);
+  const result = await getPokemon(pokeName);
+  console.log(result);
 };
 
 printPokemon('geodude');
