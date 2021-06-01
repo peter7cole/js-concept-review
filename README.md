@@ -20,11 +20,11 @@
 
 ### ECMAScript
 
-    JavaScript is a programming language based on the ECMAScript specification. Languages such as ActionScript, JavaScript, JScript, and TypeScript all use ECMAScript as its core. As a comparison, AS/JS/JScript/TS are 4 different cars, but they all use the same engine… each of their exteriors is different though, and there have modifications done to each to make it unique.
+JavaScript is a programming language based on the ECMAScript specification. Languages such as ActionScript, JavaScript, JScript, and TypeScript all use ECMAScript as its core. As a comparison, AS/JS/JScript/TS are 4 different cars, but they all use the same engine… each of their exteriors is different though, and there have modifications done to each to make it unique.
 
-    Brendan Eich created Mocha which became LiveScript, and later JavaScript. Netscape presented JavaScript to Ecma International which develops standards, and it was renamed to ECMA-262 aka ECMAScript.
+Brendan Eich created Mocha which became LiveScript, and later JavaScript. Netscape presented JavaScript to Ecma International which develops standards, and it was renamed to ECMA-262 aka ECMAScript.
 
-    It’s important to note that Brendan Eich’s “JavaScript” is not the same JavaScript that is a dialect of ECMAScript. He built the core language which was renamed to ECMAScript, which differs from the JavaScript that browser-vendors implement nowadays.
+It’s important to note that Brendan Eich’s “JavaScript” is not the same JavaScript that is a dialect of ECMAScript. He built the core language which was renamed to ECMAScript, which differs from the JavaScript that browser-vendors implement nowadays.
 
 [Source](https://medium.com/codingtown/ecmascript-2020-aka-es-11-9c547f69d96f) and [more from wikipedia](https://en.wikipedia.org/wiki/ECMAScript)
 
